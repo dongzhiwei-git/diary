@@ -1,5 +1,5 @@
 {
-  "name": "notes",
+  "name": "diary",
   "scripts": {
     "start": "docsify start . -c ssr.config.js",
     "deploy": "now -p"
