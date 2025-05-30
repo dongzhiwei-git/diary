@@ -60,7 +60,7 @@ async function summarizeAndPush() {
         }
 
         // 5. 提交更改
-        console.log('Committing changes...');
+        console.log('Committing with message:', commitMessage);
         execSync(`git commit -m "${commitMessage}"`);
         console.log('Changes committed successfully.');
 
