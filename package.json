@@ -2,7 +2,9 @@
   "name": "diary",
   "scripts": {
     "start": "docsify start . -c ssr.config.js",
-    "deploy": "now -p"
+    "deploy": "vercel --prod",
+    "summarize": "node scripts/summarize_and_push.js",
+    "generate": "node scripts/generate_dirs.js"
   },
   "files": [
     "notes"
@@ -19,5 +21,8 @@
   "devDependencies": {
     "docsify-cli": "^4.4.4",
     "now": "^21.0.1"
+  },
+  "dependencies": {
+    "iconv-lite": "^0.6.3"
   }
 }
