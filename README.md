@@ -18,6 +18,8 @@
 ## 🐶 Golang
 **设计模式系列**
 - [Go语言中的选项模式（Option Pattern）详解](/go/Go语言中的选项模式详解.md)
+- [Go内存逃逸详解](/go/Go内存逃逸详解.md)
+- [select语法与实践总结](/go/select语法与实践总结.md)
 
 ## ☁️ 云原生
 **容器相关**
@@ -35,6 +37,10 @@
 ## 🀄️ 中间件
 **Mysql相关**
 - [⬜Mysql 8.0新特性](/middleware/mysql/Mysql8.0新特性.md)
+- [Mysql索引](/middleware/mysql/Mysql索引.md)
+- [MySQL的EXPLAIN分析SQL执行计划](/middleware/mysql/MySQL的EXPLAIN分析SQL执行计划.md)
+- [⬜Mysql数据库的冷热隔离](/middleware/mysql/Mysql数据库的冷热隔离.md)
+- [Mysql数据库的动静分离](/middleware/mysql/Mysql数据库的动静分离.md)
 
 ## 📝 其他
 

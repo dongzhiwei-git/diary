@@ -17,18 +17,18 @@ func searchInsert(nums []int, target int) int {
 }
 
 func searchInsertRecursive(nums []int, target int, left int, right int) int {
-    if left > right {
-        return left
+        if left > right {
+            return left
+        }
+        mid := (right-left)>>1 + left
+        if target == nums[mid] {
+            return mid
+        } else if target < nums[mid] {
+            return searchInsertRecursive(nums, target, left, mid-1)
+        } else {
+            return searchInsertRecursive(nums, target, mid+1, right)
+        }
     }
-    mid := (right-left)>>1 + left
-    if target == nums[mid] {
-        return mid
-    } else if target < nums[mid] {
-        return searchInsertRecursive(nums, target, left, mid-1)
-    } else {
-        return searchInsertRecursive(nums, target, mid+1, right)
-    }
-}
 }
 
 ```
@@ -58,3 +58,64 @@ func searchInsert(nums []int, target int) int {
 不要使用额外的空间，你必须在 原地 修改输入数组 并在使用 O(1) 额外空间的条件下完成。
 [原题链接](https://leetcode.cn/problems/remove-duplicates-from-sorted-array-ii/description/)
 
+```go
+func removeDuplicates(nums []int) int{
+    if len(nums) == 0{
+        return 0
+    }
+    slow := 1
+    for fast := 1; fast < len(nums); fast++{
+        if nums[slow-1] != nums[fast]{
+            nums[slow] = nums[fast]
+            slow++
+        }
+    }
+
+    return slow
+}
+
+## 删除有序链表中的重复项
+```go
+/**
+ * Definition for singly-linked list.
+ * type ListNode struct {
+ *     Val int
+ *     Next *ListNode
+ * }
+ */
+func deleteDuplicates(head *ListNode) *ListNode {
+    if head == nil{
+        return head
+    }
+}
+
+## 合并字幕
+
+```go
+type Subtitle struct {
+    Start int
+    End   int
+    Text  string
+}
+
+func mergeSubtitles(subtitles []Subtitle, maxLength int) []Subtitle {
+	if len(subtitles) <= 1 {
+		return subtitles
+	}
+
+	result := make([]Subtitle, 0)
+	currentSubtitle := subtitles[0]
+	for i := 1; i < len(subtitles); i++ {
+		if len(currentSubtitle.Text)+len(subtitles[i].Text) > maxLength {
+			result = append(result, currentSubtitle)
+			currentSubtitle = subtitles[i]
+		} else {
+			currentSubtitle.Text += " " + subtitles[i].Text
+			currentSubtitle.End = subtitles[i].End
+		}
+	}
+	result = append(result, currentSubtitle)
+	return result
+}
+
+```
